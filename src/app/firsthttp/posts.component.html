@@ -1,0 +1,18 @@
+<div class="well">
+    <form [formGroup] = "myForm">
+        <div *ngIf="myForm.errors" class="alert alert-danger">{{myForm.errors.message}}</div>
+        <div>
+            <input type="text" class="form-control" (keyup.enter) = "createPost(title)" #title>
+                <ul class="list-group">
+                    <li *ngFor="let post of posts" class="list-group-item">
+                        <button class="btn btn-danger btn-xsm" (click) = "updatePost(post)">Update</button>
+                        <button class="btn btn-danger btn-xsm" (click) = "deletePost(post)">-</button>
+                        {{post.title}}
+                    </li>
+                </ul>
+        </div>
+            
+    </form>
+
+    
+</div>
